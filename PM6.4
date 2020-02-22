@@ -1,0 +1,7 @@
+import requests
+lol=requests.get('http://opendata.epa.gov.tw/webapi/Data/REWIQA/?$orderby=AQI&$skip=0&$top=1000&format=json',verify=False)
+print(lol.status_code)
+list_=lol.json()
+for xd in list_:
+    print(xd["County"],xd["SiteName"],xd["PM2.5"])
+#如何取得公開資料
